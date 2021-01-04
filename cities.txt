@@ -1,0 +1,1 @@
+0 "SanFrancisco" 1 "LA" 2 "Alabama" 3 "Miami" 4 "MexicoCity" 5 "Oakland" 6 "Pennsylvania" 7 "Houston" 8 "Austin" 9 "Kingston" 10 "Brooklyn" 11 " Queens"
