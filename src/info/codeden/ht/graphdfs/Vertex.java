@@ -3,48 +3,59 @@ package info.codeden.ht.graphdfs;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.LinkedList;
 
-public class Vertex implements Comparable<Vertex>{
-    private static final Comparator<Vertex> COMPARATOR = Comparator.comparing((Vertex v) -> v.vertexName)
-            .thenComparingInt((Vertex v) -> v.getValue());
+public class Vertex<T> implements Comparable<Vertex<Integer>>,Cloneable{
+    private static final Comparator<Vertex<Integer>> COMPARATOR = Comparator.comparing((Vertex<Integer> v) -> v.vertexName)
+            .thenComparingInt((Vertex<Integer> v) -> v.getValue());
     private String vertexName;
-    private int value;
-    private ArrayList<Vertex> adjEdge = new ArrayList<>();
+    private T value;
+    private final ArrayList<Vertex<Integer>> adjEdge = new ArrayList<>();
 
 
 
-    public Vertex(String vertexName, int value) {
+
+    public Vertex(String vertexName, T value) {
         this.vertexName = vertexName;
         this.value = value;
     }
 
-    public ArrayList<Vertex> getAdjEdge() {
+     ArrayList<Vertex<Integer>> getAdjEdge() {
         return adjEdge;
     }
 
-    public void setValue(int value) {
+     void setValue(T value) {
         this.value = value;
     }
 
-    public void setVertexName(String vertexName) {
+     void setVertexName(String vertexName) {
         this.vertexName = vertexName;
     }
 
-    public int getValue() {
+     T getValue() {
         return value;
     }
 
-    public String getVertexName() {
+     String getVertexName() {
         return vertexName;
     }
 
-    public Vertex() {
+     Vertex() {
         System.out.println("SK awesome");
-    }
+         vertexName = null;
+         value = null;
+     }
 
+    @Override public Vertex<T> clone () {
+        try{
+            Vertex <T> vertex = (Vertex<T>)super.clone();
+            return vertex;
+        }
+        catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
     @Override
-    public int compareTo (Vertex v) {
-        return COMPARATOR.compare(this, v);
+    public int compareTo (Vertex<Integer> v) {
+        return COMPARATOR.compare((Vertex<Integer>) this, v);
     }
 }

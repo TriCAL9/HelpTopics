@@ -1,28 +1,26 @@
 package info.codeden.ht.graphdfs;
 
-import java.util.Objects;
-
 public class Edge {
-    private final Vertex v;
-    private final Vertex w;
+    private final Vertex<Integer> v;
+    private final Vertex<Integer> w;
     private int weight;
 
-    public Edge(Vertex v, Vertex w, int weight) {
+    public Edge(Vertex<Integer> v, Vertex<Integer> w, int weight) {
         this.v = v;
         this.w = w;
         this.weight = weight;
     }
 
-    public Edge(Vertex v, Vertex w) {
+    public Edge(Vertex<Integer> v, Vertex<Integer> w) {
         this.v = v;
         this.w = w;
     }
 
-    public Vertex getV() {
+    public Vertex<Integer> getV() {
         return v;
     }
 
-    public Vertex getW() {
+    public Vertex<Integer> getW() {
         return w;
     }
 

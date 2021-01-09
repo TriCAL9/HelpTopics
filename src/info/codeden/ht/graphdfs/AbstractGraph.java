@@ -1,6 +1,12 @@
 package info.codeden.ht.graphdfs;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public interface AbstractGraph<T> {
+    void addVertexInfo(T value, String name);
+
+    void removeVertex(Vertex<T> v);
 
     Integer addVertex();
 
@@ -8,17 +14,19 @@ public interface AbstractGraph<T> {
 
     int getNumEdges();
 
-    int getEdgeWeight(T v, T w);
+    int getEdgeWeight(Vertex<T> v, Vertex<T> w);
 
     void addEdge(Edge edge);
 
     void removeEdge(Edge edge);
 
-    Edge findEdge(T v, T w);
+    Edge findEdge(Vertex<T> v, Vertex<T> w);
 
-    boolean isEdge(T v, T w);
+    boolean isEdge(Vertex<Integer> v, Vertex<Integer> w);
 
     boolean isConnected();
 
     boolean hasCycle();
+
+    List topologicalSort(Graph graph);
 }
