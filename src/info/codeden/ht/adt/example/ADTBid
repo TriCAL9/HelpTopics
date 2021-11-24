@@ -1,0 +1,11 @@
+-bidder
+-unitDescription
+-unitPerformance
+-costOfUnit
+-costOfInstallation
+//getters
++getBidder:out String
++getUnitDescription:out String
++getUnitPerformance:out String
++getCostOfUnit:out Float
++getCostOfInstallation:out Float

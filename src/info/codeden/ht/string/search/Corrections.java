@@ -31,7 +31,7 @@ public final class Corrections {
     }
 
     public static void main(String[] args) {
-        var sentence = "Hello from Japan. mark. i am will. What is your name? please!";
+        var sentence = "hello from Japan. mark. i am will! what is your name? please!";
         capitalizeFirstWordInSentence(sentence);
     }
 }

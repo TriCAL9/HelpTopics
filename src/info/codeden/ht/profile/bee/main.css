@@ -1,0 +1,49 @@
+
+
+ body {
+        line-height : 1.4;
+        text-rendering: optimizelegibility;
+ }
+
+ h1, h2, h3, h4, h5, h6 {
+        font-size : 1.85em;
+        font-weight : 600;
+        margin-top : 5.4px;
+        margin-bottom : 5.4px;
+ }
+img {
+        width : 60px;
+        height : 60px;
+}
+ ::selection {
+        background: rgb(201, 236, 255);
+ }
+ #content {
+        font-size : 18px;
+        max-width: 680px;
+ }
+ .aside-1 {
+        max-width : 21rem;
+        font-size : 80%;
+ }
+ #bio-info {
+        font-size : 80%;
+        line-height : 1.4;
+        max-width : 21rem;
+ }
+ .blog-date {
+
+ }
+ .page-layout {
+         margin : 3em 1em;
+  }
+ .post {
+
+ }
+ .profile-name {
+        font-size : 80%;
+        font-variant : small-caps;
+        font-variant-numeric : normal;
+        font-weight: 700;
+        margin: 0.5em 0em;
+ }
