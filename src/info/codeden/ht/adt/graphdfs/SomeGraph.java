@@ -33,7 +33,7 @@ public class SomeGraph {
         var aList = graph.topologicalSort(graph);
         graph.dfs(vertices.get(1));
 
-        for (int s = 0; s < size; s++) {
+        for (int s = aList.size()-1; s >= 0; s--) {
             System.out.println(aList.get(s).getVertexData());
         }
     }
