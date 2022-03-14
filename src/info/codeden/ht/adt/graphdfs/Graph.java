@@ -46,6 +46,10 @@ enum Graph implements AbstractGraph<String> {
     }   // Graph is initialized
 
     abstract Graph instance(Vector<Vertex<String>> vertices, boolean isWeighted);
+    
+    public boolean isEmpty() {
+      return getNumVertices() == 0;
+    }
 
     private boolean isWeighted() {
         return isWeighted;
@@ -148,8 +152,21 @@ enum Graph implements AbstractGraph<String> {
 
     @Override
     public Edge findEdge(Vertex<String> v, Vertex<String> w) {
-        int wgt = ADJ_LIST.get(v.getIndex()).get(w);
-        return new Edge(v, w, wgt);
+        final Vertex<String> a = v;
+        final Vertex<String> b = w;
+        int wgt = -1;
+        var edge;
+        if(isEdge(v, w) && isWeighted) {
+            wgt = ADJ_LIST.get(v.getIndex()).get(w);
+            edge = new Edge(v, w, wgt);
+         }
+         else if(isEdge(v, w)) {
+            edge = new Edge(v, w, wgt);
+         }
+         else {
+            edge = null;
+         }
+        return edge;
     }
 
     @Override
